@@ -1,0 +1,18 @@
+// lab 12 ess login jade
+extends layout
+block content
+	h1 Top Secret Website
+	h2 Please log in here
+	
+	//authentication error messages displayed here
+	if message.length>0
+		p=message
+	form(action="/login" method="post")
+		label username
+		input(type='text' name='username' required)
+		br
+		label password
+		input(type='password' name='password' required)
+		br
+		input(type='submit' name='login_button' value='Login')
+	| <p>If you don't have an account you can <a href="/signup">sign up here</a></p>
